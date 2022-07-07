@@ -46,6 +46,7 @@ Our file structure is:
 │   ├── __init__.py
 │   ├── main.py
 │   ├── requirements.txt
+│   ├── models.py
 │   ├── index.py
 │   ├── models.py
 │   ├── auth_bearrer.py
