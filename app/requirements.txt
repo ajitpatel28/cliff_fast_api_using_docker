@@ -1,0 +1,7 @@
+fastapi
+elasticsearch==7.17.3
+uvicorn
+PyJWT
+python-decouple
+email-validator
+sqlalchemy
