@@ -43,6 +43,7 @@ Our file structure is:
 .
 ├── app
 │   ├── Dockerfile
+│   ├── .dockerignore
 │   ├── __init__.py
 │   ├── main.py
 │   ├── requirements.txt
