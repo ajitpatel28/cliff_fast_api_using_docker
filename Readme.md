@@ -6,13 +6,20 @@
 
 First you have to git clone the files by entering in your terminal:
 ```
-$ git clone https://github.com/AtamanKit/fastapi_users_docker.git
+$ https://github.com/ajitpatel28/cliff_fast_api_using_docker.git
 ```  
 Then start the application:
 ```
 $ docker-compose up -d
 ```
 The above command will both create the images and start the containers ( images and  container for the FastAPI application).
+
+Then Run the application:
+```
+$ docker run -d -p 8000:8000 cliff_fast_api_using_docker_api
+```
+The above command will both create the images and start the containers ( images and  container for the FastAPI application).
+
 
 For visualizing the application, open up your browser and enter:
 
@@ -23,16 +30,11 @@ In the application we have seven sections:
 * For creating tokens for new users (Enter details in user/signup );
 * For creating tokens by entering user's credentials;
 * For watching the current user (only if authenticated);
-* For modifying user properties (only if authenticated with admin role);
-* For deleting the user.
+* For accessing APIs on localhost with Web UI
 
 To see the runing containers in docker, enter in the terminal:
 ```
 $ docker ps
-```
-To see the database and collection created (database name is: myTestDB, collection: users) enter in your terminal:
-```
-$ docker exec -it <container-id> bash
 ```
 
 ## Configuration and file structure
@@ -56,8 +58,20 @@ In the app directory  file I made all the files .
 
 Authentication is made by using ```bearer``` scheme with ```token``` creation and usage.
 
+The example for `curl` to access the api on localhost is shown below:
+
+```bash
+curl -X 'GET' \
+  'http://127.0.0.1:8000/count_by_category_and_stock' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYWppdEBjbGlmZi5haSIsImV4cGlyZXMiOjE2NTcyMTQ4NDcuOTk4MTU1fQ.9XHeI4p7k6lsYB6bdKXqVV2STqKrR83CkuGQTbT4SFg'
+```
+
+You could also access API on locallhost by running the docker application in following way:
+
+
 Open `http://localhost:8000` in your browser to see the Web UI of this
-project.
+project and access API.
 
 
 ```
@@ -104,7 +118,4 @@ Screenshots of Web UI:
 8.count_by_category_and_stock:
 
 ![count_by_category_stock](https://user-images.githubusercontent.com/80194170/177831231-7cb51d15-59f1-46fa-8ef9-9529aeb28fd6.png)
-
-
-
 
