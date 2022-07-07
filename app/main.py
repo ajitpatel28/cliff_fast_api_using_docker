@@ -22,13 +22,13 @@ def check_user(data: UserLoginSchema):
 
 # route handlers
 
-# testing
+# Welcome
 @app.get("/", tags=["test"])
 def greet():
-    return {"hello": "world!."}
+    return {"hello": "Cliff!."}
 
 
-# Get Posts
+# Get API responses
 @app.get("/count_discounted_products", dependencies=[Depends(JWTBearer())], tags=["count_discounted_products"])
 def get_count_discounted_products():
     for x in range(len(sources)):
@@ -368,7 +368,7 @@ def user_login(user: UserLoginSchema = Body(...)):
         "error": "Wrong login details!"
     }
 
-
+# list of id's common in whole data of elasticsearch to traverse through whole data
 sources = ["6188e422afaf2b4e847b340e",
            "6189061cb1438e7d97084227",
            "62037d06110b3f66c0238d5c",
